@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack Casino</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>BlackJack <i class="fas fa-dice"></i></h1>
+        
+        <div class="game-area">
+            <div class="dealer-area">
+                <h2>Dealer: <span id="dealer-sum">0</span></h2>
+                <div id="dealer-cards" class="cards"></div>
+            </div>
+            
+            <div class="message-area">
+                <div id="messages"></div>
+            </div>
+            
+            <div class="player-area">
+                <h2>You: <span id="player-sum">0</span></h2>
+                <div id="player-cards" class="cards"></div>
+            </div>
+            
+            <div id="split-area" class="player-area split-hand" style="display: none;">
+                <h2>Split Hand: <span id="split-sum">0</span></h2>
+                <div id="split-cards" class="cards"></div>
+            </div>
+            
+            <div class="betting-area">
+                <h3>Your chips: <span id="player-chips">1000</span></h3>
+                <div class="bet-options">
+                    <button class="bet-btn" data-bet="5" aria-label="Bet 5 chips"></button>
+                    <button class="bet-btn" data-bet="25" aria-label="Bet 25 chips"></button>
+                    <button class="bet-btn" data-bet="100" aria-label="Bet 100 chips"></button>
+                    <button class="bet-btn" data-bet="500" aria-label="Bet 500 chips"></button>
+                    <button class="bet-btn" data-bet="1000" aria-label="Bet 1000 chips"></button>
+                </div>
+                
+                <div class="current-bet-display">
+                    <div class="bet-actions">
+                        <button id="reduce-bet-btn"><i class="fas fa-minus-circle"></i> Reduce</button>
+                        <button id="clear-bet-btn"><i class="fas fa-trash"></i> Clear</button>
+                    </div>
+                    <div class="bet-area">
+                        <div id="bet-chips-area" class="bet-chips-container"></div>
+                        <div class="current-bet">
+                            <h3>Current bet: <span id="current-bet">0</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <button id="deal-btn"><i class="fas fa-hand-paper"></i> Deal</button>
+                <button id="hit-btn" disabled><i class="fas fa-plus"></i> Hit</button>
+                <button id="stand-btn" disabled><i class="fas fa-stop"></i> Stand</button>
+                <button id="double-btn" disabled><i class="fas fa-times"></i> Double</button>
+                <button id="split-btn" disabled><i class="fas fa-cut"></i> Split</button>
+                <button id="new-game-btn"><i class="fas fa-redo"></i> New Game</button>
+            </div>
+        </div>
+        
+        <div class="casino-info">
+            <p>Blackjack pays 3:2 | Dealer stands on 17 | Split allowed on pairs</p>
+        </div>
+    </div>
+    
+    <script src="js/game.js"></script>
+</body>
+</html>
